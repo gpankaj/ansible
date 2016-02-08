@@ -1,0 +1,7 @@
+---
+  - hosts: all
+    tasks:
+      - name: get the server hostname
+        command: hostname
+      - name: Ping those hosts
+        ping:

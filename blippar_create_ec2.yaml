@@ -1,0 +1,20 @@
+# demo_setup.yml
+
+- hosts: localhost
+  connection: local
+  tasks:
+
+    - name: Provision a set of instances
+      ec2:
+         key_name: usa-ansible-controller
+         group: ansible_access
+         instance_type: t2.micro
+         image: ami-cb2305a1
+         wait: true
+         exact_count: 1
+         count_tag:
+            Name: Demo
+         instance_tags:
+            Name: Demo
+         region: "us-east-1"
+      register: ec2

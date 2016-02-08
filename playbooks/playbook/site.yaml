@@ -1,0 +1,6 @@
+---
+- include: control.yaml
+- include: database.yaml
+- include: webserver.yaml
+- include: loadbalancer.yaml
+
